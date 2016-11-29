@@ -40,6 +40,9 @@ function myFunction(buttonP){
   var x=buttonP;
   if (typeof x != 'undefined'){
     //document.getElementById("message").innerHTML = cases[x-1];
+    if(cases[x-1]!=0)
+    document.getElementById("case").innerHTML =
+    "That case was valued at: $"+cases[x-1];
     cases[x-1]=0;
   }
 
@@ -55,7 +58,23 @@ function myFunction(buttonP){
     var average;
     average=(sum-1)/(howmany-1);
     document.getElementById("message").innerHTML = "$"+average.toFixed(2);
-    
+
+    var result = [];
+    for(var p=1;p<26;p++){
+      if(cases[p-1]!=0){
+          result.push(cases[p-1]);
+        }
+    }
+
+    result.sort(function(a, b){return a-b})
+    var theAnswer="";
+    for(var p=1;p<result.length+1;p++){
+          theAnswer+=" $"+result[p-1];
+          if(p%2==0)
+            theAnswer+="<div>";
+
+    }
+    document.getElementById("remain").innerHTML = theAnswer;
 }
 
 function checkNum() {

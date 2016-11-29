@@ -6,8 +6,8 @@ body {
 }
 
 p{
-  font-size: 24pt;
-  font-family: fantasy;
+  font-size: 20pt;
+  font-family: monospace;
 }
 
 input{
@@ -17,12 +17,12 @@ input{
 
 h1{
   font-size: 50pt;
-  font-family: cursive;
+  font-family:inherit;
 }
 
 h2{
   font-family: sans-serif;
-  font-size: 50pt;
+  font-size: 20pt;
   color: darkgreen;
 }
 h3{
