@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Matthew Samuel -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="DealorNoDeal.css" />
+    <title>Pseudo Intelligence Test</title>
+    <script type="text/javascript" src="DealorNoDeal.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+   <body lang="en-US"  onload="start()">
+    <h1>
+          Deal or No Deal Round 1
+    </h1>
+    <p>
+      <button onclick="myFunction();"; value=1>1</button>
+      <button onclick="myFunction()"; value=2>2</button>
+      <button onclick="myFunction()"; value=3>3</button>
+      <button onclick="myFunction()"; value=4>4</button>
+      <button onclick="myFunction()"; value=5>5</button>
+    </br>
+      <button onclick="myFunction()"; value=6>6</button>
+      <button onclick="myFunction()"; value=7>7</button>
+      <button onclick="myFunction()"; value=8>8</button>
+      <button onclick="myFunction()"; value=9>9</button>
+      <button onclick="myFunction()"; value=10>10</button>
+    </br>
+      <button onclick="myFunction()"; value=11>11</button>
+      <button onclick="myFunction()"; value=12>12</button>
+      <button onclick="myFunction()"; value=13>13</button>
+      <button onclick="myFunction()"; value=14>14</button>
+      <button onclick="myFunction()"; value=15>15</button>
+    </br>
+      <button onclick="myFunction()"; value=16>16</button>
+      <button onclick="myFunction()"; value=17>17</button>
+      <button onclick="myFunction()"; value=18>18</button>
+      <button onclick="myFunction()"; value=19>19</button>
+      <button onclick="myFunction()"; value=20>20</button>
+    </br>
+      <button onclick="myFunction()"; value=21>21</button>
+      <button onclick="myFunction()"; value=22>22</button>
+      <button onclick="myFunction()"; value=23>23</button>
+      <button onclick="myFunction()"; value=24>24</button>
+      <button onclick="myFunction()"; value=25>25</button>
+    </br>
+
+      <input type="text" id="number" class="form-control input-md"
+                  placeholder="enter a number" onchange="checkNum()"/>
+    </p>
+    <h3 id=message> Error Message </h3>
+    <!--jquery -->
+      <script>
+        $( "button" ).click(function()
+        {
+          $( this ).hide( 1000, function()
+            {
+              $( this ).remove();
+            });
+        });
+
+        $(function(){
+            $("button").click(function() {
+                var button_pressed = $(this).val();
+                setCookie("buttonP",button_pressed,1);
+            });
+        });
+
+      </script>
+  </body>
+</html>

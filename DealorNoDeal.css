@@ -1,0 +1,50 @@
+/* Matthew Samuel*/
+body {
+  background-color: lightblue;
+  color: darkblue;
+  text-align: center;
+}
+
+p{
+  font-size: 24pt;
+  font-family: fantasy;
+}
+
+input{
+    height:30px;
+    font-size:9pt;
+}
+
+h1{
+  font-size: 50pt;
+  font-family: cursive;
+}
+
+h2{
+  font-family: sans-serif;
+  font-size: 50pt;
+  color: darkgreen;
+}
+h3{
+  font-family:sans-serif;
+  font-size: 13pt;
+  color: red;
+}
+
+a{
+  font-size: 13pt;
+  font-family: monospace;
+  text-decoration:none;
+}
+
+button {
+    background-color: silver;
+    color: black;
+    float: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
