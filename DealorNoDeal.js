@@ -1,16 +1,18 @@
 //Matthew Samuel
-function start(){
-  var nums=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
-    50000,100000,200000,300000,400000,500000,750000,1000000];
+  var cases=[0];
   //another int array with the same values
   var copy=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
     50000,100000,200000,300000,400000,500000,750000,1000000];
+
+function start(){
+  var nums=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
+    50000,100000,200000,300000,400000,500000,750000,1000000];
+
 
   //a boolean variable to decide if the game is over
   var deal=false;
 
   //a int vector to hold all the money values randomly
-  var cases=[0];
   var random;
   //loop through 25 times to make the vector in random order
   for(var k=0;k<25;k++){
@@ -34,8 +36,26 @@ function start(){
 
 
 
-function myFunction(){
-  alert(getCookie("buttonP"));
+function myFunction(buttonP){
+  var x=buttonP;
+  if (typeof x != 'undefined'){
+    //document.getElementById("message").innerHTML = cases[x-1];
+    cases[x-1]=0;
+  }
+
+  var sum=1000;
+  var howmany=25;
+  var k;
+    for(k=0;k<25;k++){
+      if(cases[x-1]!=0){
+        sum+=cases[x-1];
+        howmany--;
+      }
+    }
+    var average;
+    average=sum/howmany;
+    document.getElementById("message").innerHTML = average;
+
 }
 
 function checkNum() {
