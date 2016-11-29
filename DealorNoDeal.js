@@ -4,6 +4,8 @@
   var copy=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
     50000,100000,200000,300000,400000,500000,750000,1000000];
 
+  var turns=6;
+  var gamesPlayed=0;
 function start(){
   var nums=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
     50000,100000,200000,300000,400000,500000,750000,1000000];
@@ -38,14 +40,15 @@ function start(){
 
 function myFunction(buttonP){
   var x=buttonP;
+
   if (typeof x != 'undefined'){
-    //document.getElementById("message").innerHTML = cases[x-1];
     if(cases[x-1]!=0)
     document.getElementById("case").innerHTML =
     "That case was valued at: $"+cases[x-1];
     cases[x-1]=0;
   }
 
+  if(turns==0){
   var sum=1;
   var howmany=1;
 
@@ -57,7 +60,16 @@ function myFunction(buttonP){
     }
     var average;
     average=(sum-1)/(howmany-1);
+    gamesPlayed++;
+    turns=6-gamesPlayed;
+    if(gamesPlayed>6)
+        turns=1;
+
     document.getElementById("message").innerHTML = "$"+average.toFixed(2);
+  }
+  else {
+    document.getElementById("message").innerHTML = "pick "+turns+ " more case(s)";
+  }
 
     var result = [];
     for(var p=1;p<26;p++){
@@ -75,100 +87,13 @@ function myFunction(buttonP){
 
     }
     document.getElementById("remain").innerHTML = theAnswer;
+
+    console.log("turns "+turns);
+    console.log(gamesPlayed);
 }
 
-function checkNum() {
-  var theNumber;
-  theNumber = document.getElementById("number").value;
-  if(isNaN(theNumber)==true ){
-      alert("Enter as a number");
-      document.getElementById('number').style.borderColor = "red";
-      document.getElementById("message").innerHTML = "Enter a Number";
-    }
-  else if(theNumber==9324){
-      document.getElementById('number').style.borderColor = "green";
-      message.style.color="green";
-      document.getElementById("message").innerHTML = "Correct!";
-      setCookie("total",parseInt(1));
-      //from the lab unlock door
-      document.getElementById("number").setAttribute("disabled", "");
-    }
-  else if(theNumber!=9324){
-      document.getElementById('number').style.borderColor = "red"
-      document.getElementById("message").innerHTML = "Incorrect Answer Try Again";
-    }
-}
-
-function checkNumtwo() {
-  var theNumber;
-  theNumber = document.getElementById("number").value;
-  if(isNaN(theNumber)==true){
-      alert("Enter as a number");
-      document.getElementById('number').style.borderColor = "red";
-      document.getElementById("message").innerHTML = "Enter a Number";
-    }
-  else if(theNumber==2919){
-      document.getElementById('number').style.borderColor = "green";
-      message.style.color="green";
-      document.getElementById("message").innerHTML = "Correct!";
-      setCookie("total1",parseInt(1));
-      //from the lab unlock door
-      document.getElementById("number").setAttribute("disabled", "");
-    }
-  else if(theNumber!=2919){
-      document.getElementById('number').style.borderColor = "red"
-      document.getElementById("message").innerHTML = "Incorrect Answer Try Again";
-    }
-}
-
-function checkNumthree() {
-  //Grab the user's input and store in variables
-  var theNumber;
-  theNumber = document.getElementById("number").value;
-  if(isNaN(theNumber)==true){
-      alert("Enter as a number");
-      document.getElementById('number').style.borderColor = "red";
-      document.getElementById("message").innerHTML = "Enter a Number";
-    }
-  else if(theNumber==3581){
-      document.getElementById('number').style.borderColor = "green";
-      message.style.color="green";
-      document.getElementById("message").innerHTML = "Correct!";
-      setCookie("total2",parseInt(1));
-      //from the lab unlock door
-      document.getElementById("number").setAttribute("disabled", "");
-    }
-  else if(theNumber!=3581){
-      document.getElementById('number').style.borderColor = "red"
-      document.getElementById("message").innerHTML = "Incorrect Answer Try again";
-    }
-}
-
-function calculateResult(){
-  var total;
-  total= Number(getCookie("total"))+ Number(getCookie("total1")) +
-  Number(getCookie("total2"));
-  document.getElementById("sub").innerHTML="Final Score: "+
-  Math.round((parseInt(total)/parseInt(3)) * parseInt(100)) +"%";
-}
-
-function tic(){
-  var theNumber;
-  theNumber = document.getElementById("number").value;
-  var howmany = [0,0,0,0,0,0,0,0,0,0];
-  howmany[random]++;
-  console.log(random);
-  if(howmany[theNumber]==1){
-      document.getElementById('number').style.borderColor = "green";
-      message.style.color="green";
-      document.getElementById("message").innerHTML = "Correct!";
-      //from the lab unlock door
-      document.getElementById("number").setAttribute("disabled", "");
-    }
-  else {
-    document.getElementById('number').style.borderColor = "red"
-    document.getElementById("message").innerHTML = "Incorrect Answer Try Again";
-  }
+function theTurns() {
+  turns--;
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
