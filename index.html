@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="DealorNoDeal.css" />
-    <title>Pseudo Intelligence Test</title>
+    <title>Deal or No Deal</title>
     <script type="text/javascript" src="DealorNoDeal.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
@@ -43,11 +43,8 @@
       <button onclick="myFunction()"; value=24>24</button>
       <button onclick="myFunction()"; value=25>25</button>
     </br>
-
-      <input type="text" id="number" class="form-control input-md"
-                  placeholder="enter a number" onchange="checkNum()"/>
     </p>
-    <h3 id=message> Error Message </h3>
+    <h3 id=message> Offer </h3>
     <!--jquery -->
       <script>
         $( "button" ).click(function()
@@ -60,8 +57,9 @@
 
         $(function(){
             $("button").click(function() {
-                var button_pressed = $(this).val();
-                setCookie("buttonP",button_pressed,1);
+                var button_pressed;
+                button_pressed = $(this).val();
+                myFunction(button_pressed);
             });
         });
 

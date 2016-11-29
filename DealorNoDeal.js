@@ -43,19 +43,19 @@ function myFunction(buttonP){
     cases[x-1]=0;
   }
 
-  var sum=1000;
-  var howmany=25;
-  var k;
-    for(k=0;k<25;k++){
-      if(cases[x-1]!=0){
-        sum+=cases[x-1];
-        howmany--;
+  var sum=1;
+  var howmany=1;
+
+  for(var k=1;k<26;k++){
+    if(cases[k-1]!=0){
+        sum+=cases[k-1];
+        howmany++;
       }
     }
     var average;
-    average=sum/howmany;
-    document.getElementById("message").innerHTML = average;
-
+    average=(sum-1)/(howmany-1);
+    document.getElementById("message").innerHTML = "$"+average.toFixed(2);
+    
 }
 
 function checkNum() {
