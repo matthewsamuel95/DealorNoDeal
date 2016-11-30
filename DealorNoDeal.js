@@ -64,11 +64,18 @@ function myFunction(buttonP){
     turns=6-gamesPlayed;
     if(gamesPlayed>6)
         turns=1;
-
     document.getElementById("message").innerHTML = "$"+average.toFixed(2);
+    //window.alert("$"+average.toFixed(2));
+
+    //if they select deal take them to new page
+    document.getElementById("Deal").href = "http://www.google.com/";
   }
   else {
+
     document.getElementById("message").innerHTML = "pick "+turns+ " more case(s)";
+
+    document.getElementById("Deal").href = "#";
+
   }
 
     var result = [];
@@ -88,8 +95,6 @@ function myFunction(buttonP){
     }
     document.getElementById("remain").innerHTML = theAnswer;
 
-    console.log("turns "+turns);
-    console.log(gamesPlayed);
 }
 
 function theTurns() {
