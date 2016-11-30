@@ -109,7 +109,8 @@ function theTurns() {
 
 function calculateResult(){
   var theAverage= getCookie("average");
-  document.getElementById("sub").innerHTML = theAverage;
+  document.getElementById("sub").innerHTML =
+  theAverage.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp

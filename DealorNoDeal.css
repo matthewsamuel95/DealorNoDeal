@@ -1,13 +1,13 @@
 /* Matthew Samuel*/
 body {
-  background-color: lightblue;
+  background-color: #b3ecff;
   color: darkblue;
   text-align: center;
 }
 
 p{
   font-size: 20pt;
-  font-family: monospace;
+  font-family: cursive;
 }
 
 input{
@@ -16,19 +16,21 @@ input{
 }
 
 h1{
-  font-size: 30pt;
-  font-family:inherit;
+  font-size: 32pt;
+  font-family: cursive;
+  text-align: center;
 }
 
 h2{
   font-family: sans-serif;
   font-size: 15pt;
-  color: darkgreen;
+  color: #cc006d;
 }
 h3{
   font-family:sans-serif;
   font-size: 15pt;
-  color: red;
+  color: 	#003711;
+  font-style: bold;
 }
 
 a{
