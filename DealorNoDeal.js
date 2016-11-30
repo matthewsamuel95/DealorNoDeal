@@ -60,10 +60,6 @@ function myFunction(buttonP){
     }
     var average;
     average=(sum-1)/(howmany-1);
-    gamesPlayed++;
-    turns=6-gamesPlayed;
-    if(gamesPlayed>6)
-        turns=1;
 
     document.getElementById("message").innerHTML
     //money format with commas found online
@@ -73,15 +69,17 @@ function myFunction(buttonP){
     //if they select deal take them to new page
     document.getElementById("Deal").href = "theResult.html";
 
+    document.getElementById("NoDeal").href = "#";
+
     //set cookie
     setCookie("average",average,1);
+
   }
   else {
 
     document.getElementById("message").innerHTML = "pick "+turns+ " more case(s)";
 
     document.getElementById("Deal").href = "#";
-
   }
 
     var result = [];
@@ -105,12 +103,26 @@ function myFunction(buttonP){
 
 function theTurns() {
   turns--;
+  if(turns==0)
+    $(':button').prop('disabled', true);
+}
+
+function noDeal(){
+  gamesPlayed++;
+  turns=6-gamesPlayed;
+  if(gamesPlayed>6)
+      turns=1;
+
+  $(':button').prop('disabled', false);
+
+  document.getElementById("message").innerHTML = "pick "+turns+ " more case(s)";
 }
 
 function calculateResult(){
-  var theAverage= getCookie("average");
+  var average;
+  average= getCookie("average");
   document.getElementById("sub").innerHTML =
-  theAverage.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+  "Offer: $"+average.toFixed(2);
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
