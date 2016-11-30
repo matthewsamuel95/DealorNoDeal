@@ -44,7 +44,7 @@ function myFunction(buttonP){
   if (typeof x != 'undefined'){
     if(cases[x-1]!=0)
     document.getElementById("case").innerHTML =
-    "That case was valued at: $"+cases[x-1];
+    "That case was valued at: $"+cases[x-1].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     cases[x-1]=0;
   }
 
@@ -64,11 +64,17 @@ function myFunction(buttonP){
     turns=6-gamesPlayed;
     if(gamesPlayed>6)
         turns=1;
-    document.getElementById("message").innerHTML = "$"+average.toFixed(2);
+
+    document.getElementById("message").innerHTML
+    //money format with commas found online
+    = "Offer: $"+average.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     //window.alert("$"+average.toFixed(2));
 
     //if they select deal take them to new page
-    document.getElementById("Deal").href = "http://www.google.com/";
+    document.getElementById("Deal").href = "theResult.html";
+
+    //set cookie
+    setCookie("average",average,1);
   }
   else {
 
@@ -88,8 +94,8 @@ function myFunction(buttonP){
     result.sort(function(a, b){return a-b})
     var theAnswer="";
     for(var p=1;p<result.length+1;p++){
-          theAnswer+=" $"+result[p-1];
-          if(p%2==0)
+          theAnswer+=" $"+result[p-1].toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+          if(p%3==0)
             theAnswer+="<div>";
 
     }
@@ -100,6 +106,12 @@ function myFunction(buttonP){
 function theTurns() {
   turns--;
 }
+
+function calculateResult(){
+  var theAverage= getCookie("average");
+  document.getElementById("sub").innerHTML = theAverage;
+}
+
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
