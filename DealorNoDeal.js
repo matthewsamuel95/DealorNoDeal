@@ -118,12 +118,21 @@ function theTurns() {
 }
 
 function noDeal(){
+  var check=0;
+  if(check==0){
   $(':button').prop('disabled', false);
 
   if(turns>1)
     document.getElementById("message").innerHTML = "pick "+Math.abs(turns)+ " more case(s)";
   else
       document.getElementById("message").innerHTML = "pick 1 more case";
+  check++;
+  document.getElementById("Deal").href = "#";
+
+    }
+  if(check==1){
+    check==0;
+  }
 }
 
 function calculateResult(){
