@@ -6,6 +6,8 @@
 
   var turns=6;
   var gamesPlayed=0;
+
+  var casesRemain=25;
 function start(){
   document.getElementById("remain").innerHTML =
   "Hello Welcome, to Deal or Deal !<br> Start By Picking Any 6 Cases!";
@@ -42,6 +44,8 @@ function start(){
 
 
 function myFunction(buttonP){
+  if(casesRemain==2)
+    alert("2 cases remain what case you pick is your reward");
   var x=buttonP;
 
   if (typeof x != 'undefined'){
@@ -115,10 +119,18 @@ function theTurns() {
   turns--;
   if(turns==0)
     $(':button').prop('disabled', true);
+
+    casesRemain--;
+    //if one case remains
+    if(casesRemain==1){
+      window.location="theResult.html";
+    }
+    console.log(casesRemain);
 }
 
 function noDeal(){
   var check=0;
+  //only one click do not execute if clicked twice or multiple times
   if(check==0){
   $(':button').prop('disabled', false);
 
@@ -127,6 +139,7 @@ function noDeal(){
   else
       document.getElementById("message").innerHTML = "pick 1 more case";
   check++;
+  //make the no deal link # so the user can not change their mind and go from clicking no deal to deal
   document.getElementById("Deal").href = "#";
 
     }
