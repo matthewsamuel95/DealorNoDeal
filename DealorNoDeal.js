@@ -131,7 +131,7 @@ function noDeal(){
   if(casesRemain==2){
     alert("2 cases remain! what case you DO NOT remove is your reward");
   }
-  
+
   var check=0;
   //only one click do not execute if clicked twice or multiple times
   if(check==0){
