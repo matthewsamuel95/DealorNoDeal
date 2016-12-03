@@ -155,7 +155,7 @@ function calculateResult(){
   var theAverage;
   theAverage= getCookie("average");
   document.getElementById("sub").innerHTML =
-  "You won: $"+theAverage.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+  "Congrats! You won: $"+theAverage.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
