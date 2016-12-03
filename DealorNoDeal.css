@@ -28,6 +28,12 @@ h3{
   color: darkblue;
 }
 
+h4{
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 60pt;
+  color: blue;
+}
+
 a{
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 15pt;
@@ -36,14 +42,13 @@ a{
 
 button {
     background-color: #c5ccd3;
-    color: black;
     float: center;
     font-family: 'Droid Sans Mono', monospace;
     font-size: 15px;
     padding: 15px;
     border-radius: 10px;
-    margin-left:10px;
-    margin-right:10px;
+    margin-left:30px;
+    margin-right:30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }

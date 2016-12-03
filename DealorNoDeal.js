@@ -10,7 +10,7 @@
   var casesRemain=25;
 function start(){
   document.getElementById("remain").innerHTML =
-  "Hello Welcome, to Deal or Deal !<br> Start By Picking Any 6 Cases!";
+  "Hello Welcome, to Deal or Deal <br><br> Start By Picking Any 6 Cases";
 
   var nums=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
     50000,100000,200000,300000,400000,500000,750000,1000000];
@@ -49,7 +49,7 @@ function myFunction(buttonP){
   if (typeof x != 'undefined'){
     if(cases[x-1]!=0)
     document.getElementById("case").innerHTML =
-    "That case was valued at: $"+cases[x-1].toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    "That case was valued at: $"+cases[x-1].toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     cases[x-1]=0;
   }
 
