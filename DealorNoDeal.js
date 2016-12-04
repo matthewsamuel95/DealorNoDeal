@@ -141,7 +141,7 @@ function theTurns() {
 function noDeal(){
 
   if(casesRemain==2){
-    alert("2 cases remain! what case you DO NOT remove is your reward");
+    alert("2 cases remain! which case you DO NOT remove is your reward");
   }
 
   var check=0;

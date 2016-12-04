@@ -35,7 +35,7 @@ h6{
 }
 
 a{
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   font-size: 15pt;
   text-decoration:none;
   padding: 20px 20px;
@@ -43,13 +43,11 @@ a{
 }
 
 .NoDeal {
-  position:absolute;
-  right:100px;
+  right:50px;
   top:500px
 }
 
 .Deal {
-  position:absolute;
   right:800px;
   top:500px
 }
