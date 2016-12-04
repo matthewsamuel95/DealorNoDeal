@@ -19,12 +19,12 @@ h1{
 
 h2{
   font-family: 'Libre Franklin', sans-serif;
-  font-size: 20pt;
+  font-size: 18pt;
   color: darkblue;
 }
 h3{
   font-family: 'Libre Franklin', sans-serif;
-  font-size: 20pt;
+  font-size: 18pt;
   color: darkblue;
 }
 
@@ -36,20 +36,14 @@ h6{
 
 a{
   font-family: 'Press Start 2P', cursive;
-  font-size: 15pt;
+  font-size: 13pt;
   text-decoration:none;
-  padding: 20px 20px;
+  padding: 18px 18px;
   border: 1px solid blue;
 }
 
-.NoDeal {
-  right:50px;
-  top:500px
-}
-
-.Deal {
-  right:800px;
-  top:500px
+a:hover {
+  color:  red;
 }
 
 button {
