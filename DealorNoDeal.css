@@ -6,8 +6,8 @@ body {
 }
 
 p{
-  font-size: 20pt;
-  font-family: 'Droid Sans Mono';
+  font-size: 18pt;
+  font-family: 'Droid Sans Mono', monospace;
 }
 
 h1{
@@ -38,6 +38,20 @@ a{
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 15pt;
   text-decoration:none;
+  padding: 20px 20px;
+  border: 1px solid blue;
+}
+
+.NoDeal {
+  position:absolute;
+  right:100px;
+  top:500px
+}
+
+.Deal {
+  position:absolute;
+  right:800px;
+  top:500px
 }
 
 button {
@@ -51,8 +65,4 @@ button {
     margin-right:30px;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-div{
-  /*background-color: lightgreen;*/
 }

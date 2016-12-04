@@ -8,9 +8,11 @@
   var gamesPlayed=0;
 
   var casesRemain=25;
+
 function start(){
   document.getElementById("remain").innerHTML =
-  "Hello Welcome, to Deal or Deal <br><br> Start By Picking Any 6 Cases";
+  "Hello, Welcome to <br>Deal or No Deal <br><br> Start By Picking Any 6 Cases";
+
 
   var nums=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,10000,25000,
     50000,100000,200000,300000,400000,500000,750000,1000000];
@@ -44,13 +46,16 @@ function start(){
 
 
 function myFunction(buttonP){
+
   var x=buttonP;
 
   if (typeof x != 'undefined'){
-    if(cases[x-1]!=0)
+    if(cases[x-1]>0)
     document.getElementById("case").innerHTML =
     "That case was valued at: $"+cases[x-1].toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-    cases[x-1]=0;
+    //cases[x-1]=0;
+    //change
+    cases[x-1]*=-1;
   }
 
   if(turns==0){
@@ -58,7 +63,7 @@ function myFunction(buttonP){
   var howmany=1;
 
   for(var k=1;k<26;k++){
-    if(cases[k-1]!=0){
+    if(cases[k-1]>0){
         sum+=cases[k-1];
         howmany++;
       }
@@ -95,21 +100,28 @@ function myFunction(buttonP){
   }
 
     var result = [];
+    //added
+
     for(var p=1;p<26;p++){
-      if(cases[p-1]!=0){
+      //change
+      if(cases[p-1]>0){
           result.push(cases[p-1]);
         }
     }
 
     result.sort(function(a, b){return a-b})
     var theAnswer="";
+
+    var theOne;
     for(var p=1;p<result.length+1;p++){
+
           theAnswer+=" $"+result[p-1].toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
           if(p%3==0)
             theAnswer+="<div>";
 
     }
-    document.getElementById("remain").innerHTML = theAnswer;
+
+    document.getElementById("remain").innerHTML = "Remaining values: <br>"+theAnswer;
 
 }
 
