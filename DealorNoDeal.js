@@ -39,7 +39,7 @@ function start(){
   }
   //remove last index ( which helped initalized the array)
   cases.pop();
-  console.log(cases);
+  //console.log(cases);
 }
 
 
@@ -115,8 +115,8 @@ function myFunction(buttonP){
     var theOne;
     for(var p=1;p<result.length+1;p++){
 
-          theAnswer+=" $"+result[p-1].toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-          if(p%3==0)
+          theAnswer+="&emsp;$"+result[p-1].toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+          if(p%2==0)
             theAnswer+="<div>";
 
     }
@@ -135,7 +135,7 @@ function theTurns() {
     if(casesRemain==1){
       window.location="theResult.html";
     }
-    console.log(casesRemain);
+    //console.log(casesRemain);
 }
 
 function noDeal(){
