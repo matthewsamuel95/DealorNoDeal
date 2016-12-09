@@ -28,9 +28,9 @@ h3{
   color: darkblue;
 }
 
-h6{
+#sub{
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 60pt;
+  font-size: 56pt;
   color: green ;
 }
 
@@ -43,9 +43,36 @@ a{
 }
 
 a:hover {
-  color:  red;
+  color: red;
 }
 
+#backgroundImage {
+  font-family: monospace;
+  position: absolute;
+  bottom:10px;
+  right:50px;
+  padding: 0px 0px;
+  border: 0px solid blue;
+  font-size: 10pt;
+}
+
+#faviconImage{
+  font-family: monospace;
+  position: absolute;
+  bottom:30px;
+  right:50px;
+  padding: 0px 0px;
+  border: 0px solid blue;
+  font-size: 10pt;
+}
+
+#images{
+  font-family: monospace;
+  position: absolute;
+  bottom:40px;
+  right:50px;
+  font-size: 10pt;
+}
 button {
     background-color: #c5ccd3;
     float: center;
