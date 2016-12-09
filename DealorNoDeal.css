@@ -48,10 +48,13 @@ a:hover {
 
 #play{
   font-family: 'Press Start 2P', cursive;
-  font-size: 10pt;
+  font-size: 12pt;
   text-decoration:none;
   padding: 18px 18px;
-  border: 3px solid blue;
+  border: 2px solid blue;
+  position: absolute;
+  bottom:100px;
+  right:500px;
 }
 #backgroundImage {
   font-family: monospace;
